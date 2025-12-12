@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/activity_registrarse"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Registrarse">
@@ -18,11 +18,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <EditText
-            android:id="@+id/regEditTextNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre"/>
 
         <EditText
             android:id="@+id/regEditTextCorreo"
@@ -37,14 +32,6 @@
             android:inputType="textPassword"
             android:hint="Contraseña"/>
 
-        <EditText
-            android:id="@+id/regEditTextConfirmarContraseña"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Contraseña"/>
-
-
     </LinearLayout>
 
     <Button
@@ -52,9 +39,19 @@
         app:layout_constraintTop_toBottomOf="@id/layoutRegistro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/regBtnAcceder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrarse"/>
+
+    <Button
+        android:id="@+id/regBtnAcceder"
+        app:layout_constraintTop_toBottomOf="@id/regBtnRegistrarse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acceder"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
