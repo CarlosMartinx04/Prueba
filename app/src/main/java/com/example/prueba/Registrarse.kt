@@ -44,14 +44,13 @@ class Registrarse : ComponentActivity() {
         title = "Autenticacion"
         ButtonRegistrarse.setOnClickListener{
             if(Correo.text.isNotEmpty()&&Contraseña.text.isNotEmpty()){
-                FirebaseAuth.getInstance().signInWithEmailAndPassword("hola2@gmail.com", "hola2@gmail.com")
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(Correo.text.toString(), Contraseña.text.toString())
                     .addOnCompleteListener{
                     if(it.isSuccessful){
                         showHome(it.result?.user?.email?:"", ProviderType.BASIC)
                     } else {
-
                         showAlert()
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "No se ha encontrado las credenciales", Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -65,7 +64,6 @@ class Registrarse : ComponentActivity() {
                             showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
                         } else {
                             showAlert()
-                        //Toast.makeText(this, "Correo: "+Correo.text.toString()+"\nContraseña: "+Contraseña.text.toString(), Toast.LENGTH_LONG).show()
                         }
                     }
             }
